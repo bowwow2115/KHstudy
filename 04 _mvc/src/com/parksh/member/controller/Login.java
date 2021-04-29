@@ -1,0 +1,70 @@
+package com.parksh.member.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.jasper.tagplugins.jstl.core.Out;
+
+import com.parksh.member.dao.MemberDao;
+import com.parksh.member.vo.Member;
+
+/**
+ * Servlet implementation class Login
+ */
+@WebServlet(name = "Login", urlPatterns = { "/Login" })
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Login() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		//1. 인코딩
+		request.setCharacterEncoding("utf-8");
+		//2. 넘어온 값 꺼내기
+		String id = request.getParameter("id");
+		String pw = (request.getParameter("pw"));
+		//3. 처리 로직
+		MemberDao dao = new MemberDao();
+		Member member = dao.selectOneMember(id,pw);
+		//4.결과 처리(jsp에게 데어터 주면서 출력을 요청)
+		if (member != null) {
+			//결과를 처리할 페이지 지정
+			RequestDispatcher rd = request.getRequestDispatcher("/view/loginSuccess.jsp");
+			//화면을 구성하기 위한 데이터 등록
+			request.setAttribute("memberName", member.getMemberName());
+			//사용자 페이지 이동
+			rd.forward(request, response);
+		}else {
+			RequestDispatcher rd = request.getRequestDispatcher("/view/loginFail.jsp");
+			rd.forward(request, response);
+		}
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

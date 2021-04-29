@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.parksh.member.dao.MemberDao"/>
+    <fullyQualifiedTypeName name="com.parksh.member.vo.Member"/>
+    <fullyQualifiedTypeName name="org.apache.jasper.tagplugins.jstl.core.Out"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="java.beans.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.tribes.MembershipService"/>
+    <fullyQualifiedTypeName name="java.sql.JDBCType"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="member.model.vo.Member"/>
+    <fullyQualifiedTypeName name="common.JDBCTemplate"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+</qualifiedTypeNameHistroy>

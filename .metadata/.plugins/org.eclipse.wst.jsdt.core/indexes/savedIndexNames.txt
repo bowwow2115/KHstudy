@@ -1,0 +1,13 @@
+INDEX VERSION 1.4+C:\Users\bowwow\was\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1380891998.index
+1040908398.index
+3343267703.index
+1521099443.index
+4246082980.index
+4015873816.index
+4246082980.index
+3271193799.index
+3183095821.index
+2407322055.index
+2054534388.index
+1794137121.index

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>DB 연결</h1>
+	<form = "/Login">
+	<legend>로그인</legend>
+	</form>
+</body>
+</html>

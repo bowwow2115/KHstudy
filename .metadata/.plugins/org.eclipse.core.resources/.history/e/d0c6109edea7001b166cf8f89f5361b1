@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <!-- 폰트어썸(아이콘) -->
+    <link rel ="stylesheet" href ="/fontawesome/css/all.css">
+    <script type = "text/javascript" src = "/fontawesome/js/all.js"></script>
+    <!-- 부트스트랩 CSS -->
+    <link rel ="stylesheet" href ="/css/bootstrap.css">
+    <!-- 글꼴적용(NotoSans 폰트) -->
+    <link rel = "stylesheet" href = "/css/font.css">
+    <!-- 기본 -->
+    
+    <link rel = "stylesheet" href = "/css/default.css">
+    <!-- jquery-->
+    <script type ="text/javascript" src = "/js/jqery-3.3.1.js"></script>
+    <script type ="text/javascript" src = "/js/bootstrap.bundel.min.js"></script>
+    
+    <nav class = "navbar navbar-expand-lg navbar-dark bg-primary">
+    	<a class = "navbar-brand" href="/">parksh</a>
+    	<button class = "navbar-toggler" type = "button" data-toggle = "collaspe"></button>
+    </nav>
+	<h1>헤더입니다.</h1>
