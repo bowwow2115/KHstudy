@@ -27,19 +27,20 @@ Member m = (Member) session.getAttribute("m");
 	</button>
 	<div class="collapse navbar-collapse" id="navbarColor01">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link" href="#">Menu1</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Menu2</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Menu3</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Menu4</a></li>
+		
+			<li class="nav-item"><a class="nav-link" href="/noticeList?reqPage=1">공지사항</a></li>
+			<li class="nav-item"><a class="nav-link" href="/boardList?reqPage=1">Menu2</a></li>
+			<li class="nav-item"><a class="nav-link" href="/photoList">사진게시판</a></li>
+			<li class="nav-item"><a class="nav-link" href="/view/ajax.jsp">ajax</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
 				role="button" aria-haspopup="true" aria-expanded="false">Menu5</a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">sub-1</a> <a
-						class="dropdown-item" href="#">sub-2</a>
+					<a class="dropdown-item" href="/view/mail.jsp">메일API</a> <a
+						class="dropdown-item" href="/view/map.jsp">지도 api</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">sub-3</a> <a
-						class="dropdown-item" href="#">sub-4</a>
+					<a class="dropdown-item" href="/view/payment.jsp">결제 모듈</a> <a
+						class="dropdown-item" href="/view/movie.jsp">영화 api</a>
 				</div></li>
 		</ul>
 		<%
@@ -52,7 +53,7 @@ Member m = (Member) session.getAttribute("m");
 		<%
 		} else {
 		%>
-		<a class="btn btn-secondary my-2 my-sm-0" href="#"><%=m.getMemberName()%></a>
+		<a class="btn btn-secondary my-2 my-sm-0" href="/mypage1"><%=m.getMemberName()%></a>
 		<a class="btn btn-secondary my-2 my-sm-0" href="/Logout">로그아웃</a>
 		<%
 		}

@@ -1,8 +1,0 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <!-- 폰트어썸(아이콘) -->
-    <link rel ="stylesheet" href ="/fontawesome/css/all.css">
-    <script type = "text/javascript" src = "/fontawesome/js/all.js"></script>
-    <!-- 부트스트랩 CSS -->
-    <link rel ="stylesheet" href ="/css/bootstrap.css">
-	<h1>헤더입니다.</h1>

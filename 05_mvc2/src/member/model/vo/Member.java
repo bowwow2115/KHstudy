@@ -10,6 +10,19 @@ public class Member {
 	private int memberLevel;
 	private String enrollDate;
 
+	public Member(int memberNo, String memberId, String memberPw, String memberName, String phone, String address,
+			int memberLevel, String enrollDate) {
+		super();
+		this.memberNo = memberNo;
+		this.memberId = memberId;
+		this.memberPw = memberPw;
+		this.memberName = memberName;
+		this.phone = phone;
+		this.address = address;
+		this.memberLevel = memberLevel;
+		this.enrollDate = enrollDate;
+	}
+
 	public Member() {
 		super();
 		// TODO Auto-generated constructor stub
