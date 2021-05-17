@@ -1,11 +1,11 @@
-<%@page import="notice.model.vo.NoticeComment"%>
+<%@page import="gnotice.model.vo.GNoticeComment"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="notice.model.vo.Notice"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 Notice n = (Notice) request.getAttribute("n");
-ArrayList<NoticeComment> list = (ArrayList<NoticeComment>)request.getAttribute("list");
+ArrayList<GNoticeComment> list = (ArrayList<GNoticeComment>)request.getAttribute("list");
 %>
 <!DOCTYPE html>
 <html>
@@ -56,7 +56,7 @@ ArrayList<NoticeComment> list = (ArrayList<NoticeComment>)request.getAttribute("
 						class="btn btn-info"
 						href="/noticeDelete?noticeNo=<%=n.getNoticeNo()%>">삭제하기</a> 
 						<%
-						}
+ 						}
  						%>
 					</th>
 				</tr>
@@ -81,13 +81,17 @@ ArrayList<NoticeComment> list = (ArrayList<NoticeComment>)request.getAttribute("
 				</ul>
 			</form>
 		</div>
-		<%}%>
+		<%
+		}
+		%>
 		<%--댓글 출력 --%>
 		<div class="commentBox">
 			<%
-			for(NoticeComment nc : list) {
+			for(GNoticeComment nc : list) {
 			%>
-			<%if(nc.getNcLevel()==1) {%>
+			<%
+			if(nc.getNcLevel()==1) {
+			%>
 			<ul class="comments">
 				<li>
 				<i class="far fa-user fa-3x"></i>
@@ -96,18 +100,28 @@ ArrayList<NoticeComment> list = (ArrayList<NoticeComment>)request.getAttribute("
 				</li>
 				<li>
 					<p><%=nc.getNcContentBr()%></p>
-					<textarea name= "ncContent" class = "form-control" style = "display:none;"><%=nc.getNcContent() %></textarea>
+					<textarea name= "ncContent" class = "form-control" style = "display:none;"><%=nc.getNcContent()%></textarea>
 				
 						<p class="commentsBtn">
-						<%if (m != null) {%>
-						<%if (m.getMemberId().equals(nc.getNcWriter())) { %>
-						<a href="javascript:void(0)" onclick = "modifyComment(this, '<%=nc.getNcNo()%>', '<%=n.getNoticeNo() %>');">수정</a> 
-						<a href="javascript:void(0)" onclick = "deleteComment(this, '<%=nc.getNcNo()%>', '<%=n.getNoticeNo() %>');">삭제</a> 
-						<% } //댓글 작성자와 로그인 회원이 일치하는 경우 %> 
+						<%
+						if (m != null) {
+						%>
+						<%
+						if (m.getMemberId().equals(nc.getNcWriter())) {
+						%>
+						<a href="javascript:void(0)" onclick = "modifyComment(this, '<%=nc.getNcNo()%>', '<%=n.getNoticeNo()%>');">수정</a> 
+						<a href="javascript:void(0)" onclick = "deleteComment(this, '<%=nc.getNcNo()%>', '<%=n.getNoticeNo()%>');">삭제</a> 
+						<%
+ 						} //댓글 작성자와 로그인 회원이 일치하는 경우
+ 						%> 
 						<a href="javascript:void(0)" class="recShow">답글달기</a>
-						<% } //로그인 되어있는 경우 %>
+						<%
+						} //로그인 되어있는 경우
+						%>
 						</p> 
-							<%if (m != null) { %>
+							<%
+ 							if (m != null) {
+ 							%>
 					<form action="/insertComment" class="recoment">
 						<input type="hidden" name="ncLevel" value="2" /> 
 						<input type="hidden" name="ncWriter" value="<%=m.getMemberId()%>" /> 
@@ -119,11 +133,15 @@ ArrayList<NoticeComment> list = (ArrayList<NoticeComment>)request.getAttribute("
 							<button type="button" class="btn btn-outline-primary recCancel">취소</button>
 						</div>
 					</form> 
-					<% } %>
+					<%
+ 					}
+ 					%>
 				</li>
 			</ul>
 			<!-- 대 댓글 -->
-			<%for(NoticeComment ncc: list){ %>
+			<%
+			for(GNoticeComment ncc: list){
+			%>
 				<%if(ncc.getNcLevel() == 2 && ncc.getNcRef() == nc.getNcNo()) {%>
 				<ul class="recomments">
 					<li>
